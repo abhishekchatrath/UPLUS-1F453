@@ -58,7 +58,6 @@ body {
 
 
 .flex__item {
-    padding: 5px;
     width: 300px;
     height: 300px;
     margin: 10px;
@@ -67,11 +66,12 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+    box-shadow:
 }
 
 .flex__item__text{
-    margin: 1%;
+    margin: 3%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -82,7 +82,8 @@ body {
 }
 
 .flex__item__bottom{
-    
+    color: black;
+    background-color: #F7A072;
 }
 
 .wrap    {
@@ -90,7 +91,7 @@ body {
   flex-wrap: wrap;
 }
 .wrap li {
-  background: gold;
+  background: #223843;
 }
 
 .selectors{

@@ -169,13 +169,32 @@
 
         <ul class="flex-container wrap">
             <li class="flex__item">
-                <p class="flex__item__score">Score</p>
+                <h1 class="flex__item__score">{score}</h1>
+                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2>
 
+<!-- confidenceFunc (score) {
+
+    var confPhrase;
+
+    if(score => .6){
+        confPhrase = "Great!";
+    }
+    else if(score => 0.4 && score < 0.6){
+        confPhrase = "Good!";
+    }
+    else if(score < 0.4){
+        confPhrase = "Encroyable!";
+    }
+
+    return confPhrase;
+} -->
 
                 <div class="flex__item__bottom">
-                    <h1 class="flex__item__text">Branch Name</h1>
-                    <h2 class="flex__item__text">Program Type</h2>
-                    <h3 class="flex__item__text">Time</h3>
+                    <p clas="flex__item__paragraph">
+                        <h2 class="flex__item__text">Agincourt</h2>
+                        <h3 class="flex__item__text">STEM</h3>
+                        <p class="flex__item__text">6:00pm</p>
+                    </p>
                 </div>
 
             </li>
