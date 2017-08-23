@@ -67,7 +67,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    box-shadow:
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 5px;
 }
 
 .flex__item__text{
@@ -83,7 +84,11 @@ body {
 
 .flex__item__bottom{
     color: black;
-    background-color: #F7A072;
+    background-color: #EAF2EF;
+    border-top-right-radius: 100%40px;
+    border-top-left-radius: 100%40px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .wrap    {
@@ -108,7 +113,7 @@ body {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    margin: 10px; /* demo only */
+    margin: 10px;
 }
 
 .selector select{
@@ -151,6 +156,12 @@ body {
 
 .selector__branch{
     background-color: #1abc9c;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .selector__program{
