@@ -7,14 +7,15 @@ var headers = {
 
 var dataString = '{"fields": ["Name","Type"], "values": [["Agincourt","Cultural"]]}';
 
-let options = {
+function getScore (branchName, programType, time) {
+	let dataString = '{"fields": ["Name","Type", "Time"], "values": [["' + branchName + '","' + programType + '","' + time + '"]]}';
+	let options = {
     url: 'https://ibm-watson-ml.mybluemix.net/v3/wml_instances/a4d99bd0-fbda-43e0-927a-4b837ea1f292/published_models/fe4f0397-f71e-45e9-befa-513c9db1838a/deployments/5318352e-8b39-4b3e-8bf2-2c0c5f41ab00/online',
     method: 'POST',
     headers: headers,
     body: dataString
 };
-
-function getScore (branchName, programType, time) {
+	console.log(dataString);
 	return 0.6;
 }
 
