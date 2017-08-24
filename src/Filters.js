@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Myplanet Fellowship - TPL Programming Optimization</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+import React, { Component } from 'react';
 
-<body>
-
-    <div class="header">
-        <div class="header__row">
-            <div id="logo">
-                <a href="#">
-                    <img class="" alt="Toronto Public Library Homepage" src="TPL-Logo.jpg" height="42">
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="header__body">
-        <div class="selectors">
-
-            <label for="selector__branch">Branch</label>
-            <span class="selector">
-                <select class="selector__branch" name="options" id="selector-branch">
+class Filters extends Component {
+  render() {
+    return (
+        <div className="selectors">
+           <label for="selector__branch">Branch</label>
+            <span className="selector">
+                <select className="selector__branch" name="options" id="selector-branch">
                     <option value="none">None</option>
                     <option value="br1">Agincourt</option>
                     <option value="br2">Albert Campbell</option>
@@ -129,8 +112,8 @@
             </span>
 
             <label for="selector__program">Program Type</label>
-            <span class="selector">
-                <select class="selector__program" name="options" id="selector-program">
+            <span className="selector">
+                <select className="selector__program" name="options" id="selector-program">
                     <option value="none">None</option>
                     <option value="program-1">Arts &amp; Culture</option>
                     <option value="program-2">STEM</option>
@@ -139,120 +122,17 @@
             </span>
 
             <label for="selector__time">Time</label>
-            <span class="selector">
-                <select class="selector__time" name="options" id="selector-time">
+            <span className="selector">
+                <select className="selector__time" name="options" id="selector-time">
                     <option value="none">None</option>
                     <option value="time-3">2pm</option>
                     <option value="time-1">4pm</option>
                     <option value="time-2">6pm</option>
                 </select>
             </span>
-
         </div>
+    );
+  }
+}
 
-        <div class="sort">
-
-            <label for="selector__sorting">Sort By:</label>
-            <span class="selector">
-                <select class="selector__sorting" name="options" id="sort">
-                    <option value="none">None</option>
-                    <option value="season">Seasonality</option>
-                    <option value="y2o">Young to Old</option>
-                    <option value="o2y">Old to Young</option>
-                </select>
-            </span>
-
-        </div>
-    </div>
-
-    <div class="body">
-        <!-- <button class="submit"></button> -->
-
-        <ul class="flex-container wrap">
-            <li class="flex__item">
-                <!-- <h1 class="flex__item__score">{score}</h1>
-                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2> -->
-                <h1 class="flex__item__score">Score</h1>
-                <h2 class="flex__item__score">Confidence Phrase</h2>
-
-                <div class="flex__item__bottom">
-                    <h2 class="flex__item__text">Agincourt</h2>
-                    <h3 class="flex__item__text">STEM</h3>
-                    <p class="flex__item__text">6:00pm</p>
-                </div>
-
-            </li>
-
-            <li class="flex__item">
-                <h1 class="flex__item__score">{score}</h1>
-                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2>
-
-                <div class="flex__item__bottom">
-                    <h2 class="flex__item__text">Agincourt</h2>
-                    <h3 class="flex__item__text">STEM</h3>
-                    <p class="flex__item__text">6:00pm</p>
-                </div>
-
-            </li>
-            <li class="flex__item">
-                <h1 class="flex__item__score">{score}</h1>
-                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2>
-
-                <div class="flex__item__bottom">
-                    <h2 class="flex__item__text">Agincourt</h2>
-                    <h3 class="flex__item__text">STEM</h3>
-                    <p class="flex__item__text">6:00pm</p>
-                </div>
-
-            </li>
-            <li class="flex__item">
-                <h1 class="flex__item__score">{score}</h1>
-                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2>
-
-                <div class="flex__item__bottom">
-                    <h2 class="flex__item__text">Agincourt</h2>
-                    <h3 class="flex__item__text">STEM</h3>
-                    <p class="flex__item__text">6:00pm</p>
-                </div>
-
-            </li>
-            <li class="flex__item">
-                <h1 class="flex__item__score">{score}</h1>
-                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2>
-
-                <div class="flex__item__bottom">
-                    <h2 class="flex__item__text">Agincourt</h2>
-                    <h3 class="flex__item__text">STEM</h3>
-                    <p class="flex__item__text">6:00pm</p>
-                </div>
-
-            </li>
-            <li class="flex__item">
-                <h1 class="flex__item__score">{score}</h1>
-                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2>
-
-                <div class="flex__item__bottom">
-                    <h2 class="flex__item__text">Agincourt</h2>
-                    <h3 class="flex__item__text">STEM</h3>
-                    <p class="flex__item__text">6:00pm</p>
-                </div>
-
-            </li>
-            <li class="flex__item">
-                <h1 class="flex__item__score">{score}</h1>
-                <h2 class="flex__item__score">{{ confidenceFunc(score) }}</h2>
-
-                <div class="flex__item__bottom">
-                    <h2 class="flex__item__text">Agincourt</h2>
-                    <h3 class="flex__item__text">STEM</h3>
-                    <p class="flex__item__text">6:00pm</p>
-                </div>
-
-            </li>
-
-        </ul>
-
-    </div>
-
-</body>
-</html>
+export default Filters;
