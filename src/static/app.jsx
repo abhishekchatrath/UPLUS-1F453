@@ -1,0 +1,69 @@
+class TPLApp extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			prediction: '',
+			probabilityYes: '',
+			probabilityNo: ''
+		}
+	}
+
+  getScore() {
+    return fetch('http://localhost:8080/api/watson')
+      .then((response) => {
+      	return response;
+      });
+  }
+
+  getPrediction(branchName, programType, time) {
+  	axios.post("http://localhost:8080/api/watson", {
+        branchName: branchName,
+        programType: programType,
+        time: time
+      })
+      .then((response) => {
+      	console.log(response.data);
+      	this.setState({
+      		prediction: response.data
+      	});
+      	console.log(this.state.prediction);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  	
+  }
+
+
+  componentDidMount() {
+    this.getPrediction('Agincourt', 'Cultural', '3:30-6 pm');
+  }
+
+
+	render() {
+		return (
+			<div>
+				<div className="header">
+        			<div className="header__row">
+            			<div id="logo">
+                			<a href="#">
+                    		<img className="" alt="Toronto Public Library Homepage" src="TPL-Logo.jpg" height="42"></img>
+                			</a>
+            			</div>
+        			</div>
+    			</div>
+    			<div className="header__body">
+        			<div className="selectors">
+        			{this.state.prediction}
+        			</div>
+        		</div>
+			</div>
+		);
+	}
+}
+
+ReactDOM.render(
+  <TPLApp />,
+  document.getElementById('root')
+);
