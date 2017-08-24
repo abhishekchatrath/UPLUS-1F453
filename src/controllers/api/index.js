@@ -1,6 +1,6 @@
 const watson = require('../../watson');
 const request = require('request-promise');
-var test = '';
+var test;
 function getPrediction(branchName, programType, time) {
 	var headers = {
     'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ function getPrediction(branchName, programType, time) {
     .then(function (parsedBody) {
         // POST succeeded... 
 
-        test = parsedBody.values[0][7].toString();
+        test = [parsedBody.values[0][7].toString(), parsedBody.values[0][5][0].toString(), parsedBody.values[0][5][1].toString() ];
         return test;
     })
     .catch(function (err) {

@@ -25,9 +25,10 @@ class TPLApp extends React.Component {
       .then((response) => {
       	console.log(response.data);
       	this.setState({
-      		prediction: response.data
+      		prediction: response.data[0],
+      		probabilityNo: response.data[1],
+      		probabilityYes: response.data[2]
       	});
-      	console.log(this.state.prediction);
       })
       .catch(function (error) {
         console.log(error);
@@ -55,7 +56,9 @@ class TPLApp extends React.Component {
     			</div>
     			<div className="header__body">
         			<div className="selectors">
-        			{this.state.prediction}
+        			Should I hold the event?: {this.state.prediction},
+        			Probability of yes: {this.state.probabilityYes},
+        			Probability of no: {this.state.probabilityNo}
         			</div>
         		</div>
 			</div>
