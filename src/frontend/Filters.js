@@ -143,11 +143,11 @@ class Filters extends Component {
                             <option value="br93">Spadina Road</option>
                             <option value="br94">St. Clair/Silverthorn</option>
                             <option value="br95">St. James Town</option>
-                            <option value="br96">Swansea Memorial</option>
-                            <option value="br97">Taylor Memorial</option>
-                            <option value="br98">Todmorden Room</option>
-                            <option value="br99">Victoria Village</option>
-                            <option value="br100">Woodview Park</option>
+                            <option value="Swansea Memorial">Swansea Memorial</option>
+                            <option value="Taylor Memorial">Taylor Memorial</option>
+                            <option value="Todmorden Room">Todmorden Room</option>
+                            <option value="Victoria Village">Victoria Village</option>
+                            <option value="Woodview Park">Woodview Park</option>
                         </select>
                     </span>
 
@@ -156,9 +156,10 @@ class Filters extends Component {
                     <span className="selector">
                         <select className="selector__program" name="options" id="selector-program" value={this.state.program} onChange={this.handleChangeProgram}>
                             <option value="none">None</option>
-                            <option value="program-1">Arts &amp; Culture</option>
-                            <option value="program-2">STEM</option>
-                            <option value="program-3">Business</option>
+                            <option value="Cultural">Cultural</option>
+                            <option value="User Education">User Education</option>
+                            <option value="Literary">Literary</option>
+                            <option value="Literacy">Literacy</option>
                         </select>
                     </span>
 
@@ -166,13 +167,14 @@ class Filters extends Component {
                     <span className="selector">
                         <select className="selector__time" name="options" id="selector-time" value={this.state.time} onChange={this.handleChangeTime}>
                             <option value="none">None</option>
-                            <option value="time-3">2pm</option>
-                            <option value="time-1">4pm</option>
-                            <option value="time-2">6pm</option>
+                            <option value="9:00am - 12:30pm">9:00am - 12:30pm</option>
+                            <option value="12:30pm - 3:30pm">12:30pm - 3:30pm</option>
+                            <option value="3:30 - 6:00pm">3:30 - 6:00pm</option>
+                            <option value="12:30p - 3:30pm">12:30p - 3:30pm</option>
                         </select>
                     </span>
 
-                    <input type="submit" value="Submit" />
+                    <input className="button" type="submit" value="SUBMIT" />
 
                 </form>
 
