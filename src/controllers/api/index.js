@@ -1,6 +1,6 @@
-const watson = require('../../watson');
 const request = require('request-promise');
 var test;
+
 function getPrediction(branchName, programType, time) {
 	var headers = {
     'Content-Type': 'application/json',
@@ -31,34 +31,8 @@ function getPrediction(branchName, programType, time) {
     });
   }
 
-function readScore() {
-	return test;
-}
-
-function handleScore (req, res, next) {
-	const query = req.query;
-	//const branchName = query.branchName;
-	//const programType = query.programType;
-	//const time = query.time;
-	const branchName = "Agincourt";
-	const programType = "Cultural";
-	const time = "9 am-12:30 pm";
-	console.log(branchName + "\t" + programType + "\t" + time);
-	//watson.getScore(branchName, programType, time);
-	getPrediction(branchName, programType, time);
-	res.json(
-		{
-			branchName,
-			programType,
-			time,
-		}
-	);
-}
-
 module.exports = Object.freeze(
 	{
-		handleScore,
-		getPrediction,
-		readScore
+		getPrediction
 	}
 );

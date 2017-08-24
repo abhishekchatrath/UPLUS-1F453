@@ -9,13 +9,6 @@ class TPLApp extends React.Component {
 		}
 	}
 
-  getScore() {
-    return fetch('http://localhost:8080/api/watson')
-      .then((response) => {
-      	return response;
-      });
-  }
-
   getPrediction(branchName, programType, time) {
   	axios.post("http://localhost:8080/api/watson", {
         branchName: branchName,
@@ -23,7 +16,6 @@ class TPLApp extends React.Component {
         time: time
       })
       .then((response) => {
-      	console.log(response.data);
       	this.setState({
       		prediction: response.data[0],
       		probabilityNo: response.data[1],
@@ -36,11 +28,9 @@ class TPLApp extends React.Component {
   	
   }
 
-
   componentDidMount() {
     this.getPrediction('Agincourt', 'Cultural', '3:30-6 pm');
   }
-
 
 	render() {
 		return (
