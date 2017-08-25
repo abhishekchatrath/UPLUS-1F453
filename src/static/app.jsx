@@ -35,22 +35,8 @@ class TPLApp extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="header">
-        			<div className="header__row">
-            			<div id="logo">
-                			<a href="#">
-                    		<img className="" alt="Toronto Public Library Homepage" src="TPL-Logo.jpg" height="42"></img>
-                			</a>
-            			</div>
-        			</div>
-    			</div>
-    			<div className="header__body">
-        			<div className="selectors">
-        			Should I hold the event?: {this.state.prediction},
-        			Probability of yes: {this.state.probabilityYes},
-        			Probability of no: {this.state.probabilityNo}
-        			</div>
-        		</div>
+				<TPL_Header />
+        <Controls />
 			</div>
 		);
 	}
